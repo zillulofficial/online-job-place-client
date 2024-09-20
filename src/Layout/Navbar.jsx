@@ -4,7 +4,7 @@ import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-    const { user, logout } = useContext(AuthContext)
+    // const { user, logout } = useContext(AuthContext)
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
     useEffect(() => {
@@ -18,9 +18,9 @@ const Navbar = () => {
         <NavLink to="/"><li><a className="hover:bg-[#ff3838cb] hover:text-white">Home</a></li></NavLink>
         <NavLink to="/about"><li><a className="hover:bg-[#ff3838cb] hover:text-white">About</a></li></NavLink>
         <NavLink to="/contact"><li><a className="hover:bg-[#ff3838cb] hover:text-white">Contact</a></li></NavLink>
-        {
+        {/* {
             user?<NavLink to="/bookings"><li><a className="hover:bg-[#ff3838cb] hover:text-white">Bookings</a></li></NavLink>: ""
-        }
+        } */}
     </>
 
     const handleLogout = () => {
@@ -70,7 +70,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {
+                    {/* {
                         user ? <>
                             <div className="navbar-end flex items-center gap-3">
                                 <div className="dropdown dropdown-end dropdown-hover">
@@ -86,7 +86,7 @@ const Navbar = () => {
                             <div className="navbar-end flex justify-end items-center gap-3">
                                 <Link to="/login"><button className="btn text-[#FF3811] bg-none border border-[#FF3811] hover:text-white hover:bg-[#FF3811] hover:border-none">Login</button></Link>
                             </div>
-                    }
+                    } */}
                     <label className="swap swap-rotate text-end ml-3">
 
                         {/* this hidden checkbox controls the state */}

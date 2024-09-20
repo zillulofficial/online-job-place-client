@@ -36,24 +36,9 @@ const AuthProvider = ({children}) => {
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
-            const userEmail= currentUser?.email || user?.email
-            const loggedUser= {email: userEmail}
             if (currentUser) {
-                axios.post('https://car-doctor-server-swart-nine.vercel.app/jwt', loggedUser, {withCredentials: true})
-                .then(res =>{
-                    console.log(res.data);
-                })
-                
-                setLoader(false)
-            }
-            else{
-                axios.post('https://car-doctor-server-swart-nine.vercel.app/logout', loggedUser, {withCredentials: true})
-                .then(res =>{
-                    console.log(res.data);
-                })
-                
-                setLoader(false)
+                setUser(currentUser)
+                setLoading(false)
             }
         })
         return () => {
