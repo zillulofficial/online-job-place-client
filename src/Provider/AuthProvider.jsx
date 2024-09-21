@@ -1,8 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
-import axios from "axios";
-
 
 export const AuthContext= createContext()
 const auth= getAuth(app)
@@ -54,8 +52,6 @@ const AuthProvider = ({children}) => {
         logout,
         googleLogIn,
         facebookLogIn
-
-
     }
     return (
         <AuthContext.Provider value={authInfo}>
