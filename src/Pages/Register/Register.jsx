@@ -38,13 +38,13 @@ const Register = () => {
     }
     return (
         <div>
-            <div className="container mx-auto flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center">
+            <div className="container mx-auto flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-16">
                 <div className="md:w-1/2">
                     <img className=" mx-auto" src="https://i.postimg.cc/q7QP5CHf/Frame.png" />
                 </div>
                 <div className="mx-auto">
                     <div className="hero md:min-h-96">
-                        <div className="hero-content border-2 rounded-lg p-5">
+                        <div className="hero-content rounded-lg p-5">
                             <div className=" shrink-0 w-full bg-base-100">
                                 <form onSubmit={handleSubmit} className="card-body">
                                     <div>
