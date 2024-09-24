@@ -26,9 +26,8 @@
 perspective: 1000px;
 }
 
-.flip-card-inner{
+.flip-card,.flip-card-inner{
     transition: transform ease 0.6s;
-    
     transform-style: preserve-3d;
 }
 
