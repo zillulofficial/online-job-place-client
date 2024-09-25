@@ -13,13 +13,6 @@ const Navbar = () => {
     }, [theme])
 
 
-
-    const handleLogout = () => {
-        logout()
-            .then()
-            .catch(error => console.error(error))
-    }
-
     const handleToggle = e => {
         if (e.target.checked) {
             setTheme("dark")
@@ -45,7 +38,7 @@ const Navbar = () => {
                     {
                         user ?
                             <li className="mr-3 hover:border hover:border-primary hover:rounded-lg hover:bg-none">
-                                <div onClick={handleLogout}>
+                                <div onClick={logout}>
                                     Logout
                                 </div>
                             </li>
@@ -92,7 +85,7 @@ const Navbar = () => {
                             <li>
                                 <div>Bid Requests</div>
                             </li>
-                            <li className='mt-2'>
+                            <li onClick={logout} className='mt-2'>
                                 <button className='bg-gray-200 block text-center'>Logout</button>
                             </li>
                         </ul>
