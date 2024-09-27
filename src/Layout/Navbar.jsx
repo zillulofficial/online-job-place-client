@@ -31,19 +31,19 @@ const Navbar = () => {
             </div>
             <div className='flex-none'>
                 <ul className='menu menu-horizontal px-1'>
-                    <li className="hover:border hover:border-primary hover:rounded-lg hover:bg-none mx-3">
+                    <li className="hover:border hover:border-[#de5353] hover:rounded-lg hover:bg-none mx-3">
                         <Link to='/'><div>Home</div></Link>
                     </li>
 
                     {
                         user ?
-                            <li className="mr-3 hover:border hover:border-primary hover:rounded-lg hover:bg-none">
+                            <li className="mr-3 hover:border hover:border-[#de5353] hover:rounded-lg hover:bg-none">
                                 <div onClick={logout}>
                                     Logout
                                 </div>
                             </li>
                             :
-                            <li className="hover:border hover:border-primary hover:rounded-lg hover:bg-none">
+                            <li className="hover:border hover:border-[#de5353] hover:rounded-lg hover:bg-none">
                                 <Link to='/login'>
                                     <div>
                                         Login

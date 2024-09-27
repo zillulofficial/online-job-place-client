@@ -1,5 +1,5 @@
 import { IoMdEyeOff } from "react-icons/io";
-import { FaEye, FaFacebook } from "react-icons/fa6";
+import { FaEye, FaFacebook, FaGithub } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-    const { login, googleLogIn, facebookLogIn } = useContext(AuthContext)
+    const { login, googleLogIn, facebookLogIn, githubLogIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state || '/';
@@ -101,6 +101,7 @@ const Login = () => {
                                     <p className=" text-center divider">Or Login with</p>
                                     <div className="flex items-center justify-between mb-3">
                                         <button onClick={() => handleSocialSignIn(googleLogIn)} className="hover:bg-slate-200 rounded-full px-4 py-2  flex gap-1 items-center"><FcGoogle className="text-2xl"></FcGoogle>Google</button>
+                                        <button onClick={() => handleSocialSignIn(githubLogIn)} className="hover:bg-slate-200 rounded-full px-4 py-2 flex gap-1 items-center"><FaGithub className="text-2xl text-blue-600"></FaGithub>Github</button>
                                         <button onClick={() => handleSocialSignIn(facebookLogIn)} className="hover:bg-slate-200 rounded-full px-4 py-2 flex gap-1 items-center"><FaFacebook className="text-2xl text-blue-600"></FaFacebook>Facebook</button>
                                     </div>
                                 </div>
