@@ -54,7 +54,7 @@ const Register = () => {
     if(user || loader) return
     return (
         <div>
-            <div className="container mx-auto flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-16">
+            <div className="container mx-auto mt-24 flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-16">
                 <div className="md:w-1/2">
                     <img className=" mx-auto" src="https://i.postimg.cc/PJMJxF2d/bg1.jpg" />
                 </div>

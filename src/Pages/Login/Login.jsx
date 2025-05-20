@@ -69,7 +69,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="container mx-auto flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-24">
+            <div className="container mx-auto mt-24 flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-24">
                 <div className="md:w-1/2">
                     <img className=" mx-auto" src="https://i.postimg.cc/q7QP5CHf/Frame.png" />
                 </div>
