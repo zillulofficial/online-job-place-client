@@ -11,11 +11,26 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Provider/AuthProvider';
 import AboutUsDetails from './Pages/AboutUsDetails/AboutUsDetails';
+import JobDetails from './Pages/JobDetails/JobDetails';
+import AddJobDemi from './Pages/AddJobDemi/AddJobDemi';
+import MyPostDemi from './Pages/MyPostDemi/MyPostDemi';
+import UpdateJobDemi from './Pages/UpdateJobDemi/UpdateJobDemi';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import MyBidsDemi from './Pages/MyBidsDemi/MyBidsDemi';
+import BidRequests from './Pages/BidRequests/BidRequests';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import AllJobs from './Pages/AllJobs/AllJobs';
+
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Root />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -32,6 +47,36 @@ const router = createBrowserRouter([
       {
         path: '/aboutUs',
         element: <AboutUsDetails></AboutUsDetails>
+      },
+      {
+        path: '/job/:id',
+        element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`)
+      },
+      {
+        path: '/update/:id',
+        element: <PrivateRoute><UpdateJobDemi></UpdateJobDemi></PrivateRoute>,
+        loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`)
+      },
+      {
+        path: '/addJob',
+        element: <PrivateRoute><AddJobDemi></AddJobDemi></PrivateRoute>
+      },
+      {
+        path: '/myPostedJobs',
+        element: <PrivateRoute><MyPostDemi></MyPostDemi></PrivateRoute>
+      },
+      {
+        path: '/myBids',
+        element: <PrivateRoute><MyBidsDemi></MyBidsDemi></PrivateRoute>
+      },
+      {
+        path: '/bidReq',
+        element: <PrivateRoute><BidRequests></BidRequests></PrivateRoute>
+      },
+      {
+        path: '/allJobs',
+        element: <AllJobs></AllJobs>
       }
     ]
   },
@@ -40,7 +85,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </AuthProvider>
   </StrictMode>,
 )

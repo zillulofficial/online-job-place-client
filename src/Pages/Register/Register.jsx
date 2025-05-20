@@ -1,14 +1,20 @@
 import { IoMdEyeOff } from "react-icons/io";
 import { FaEye } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
-    const { createUser, user, setUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, user, setUser, updateUserProfile, loader } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
+
+    useEffect(()=>{
+        if(user){
+            navigate('/')
+        }
+    },[])
     const handleSubmit = e => {
         e.preventDefault()
         const form = e.target
@@ -44,9 +50,8 @@ const Register = () => {
                 console.log(result.user)
             })
             .catch(error => console.log(error))
-
-
     }
+    if(user || loader) return
     return (
         <div>
             <div className="container mx-auto flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-16">

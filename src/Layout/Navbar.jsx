@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext)
+    const navigate= useNavigate()
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
     useEffect(() => {
@@ -21,6 +22,13 @@ const Navbar = () => {
             setTheme("light")
         }
     }
+    const handleLogOut= ()=>{
+        logout()
+        .then(
+            navigate('/')
+        )
+
+    }
     return (
         <div className='navbar shadow-sm max-w-[1185px] px-4 mx-auto mb-24'>
             <div className='flex-1'>
@@ -31,19 +39,22 @@ const Navbar = () => {
             </div>
             <div className='flex-none'>
                 <ul className='menu menu-horizontal px-1'>
-                    <li className="hover:border hover:border-[#de5353] hover:rounded-lg hover:bg-none mx-3">
+                    <li className=" hover:rounded-lg hover:bg-none mx-3">
                         <Link to='/'><div>Home</div></Link>
+                    </li>
+                    <li className=" hover:rounded-lg hover:bg-none mx-3">
+                        <Link to='/allJobs'><div>All Jobs</div></Link>
                     </li>
 
                     {
                         user ?
-                            <li className="mr-3 hover:border hover:border-[#de5353] hover:rounded-lg hover:bg-none">
-                                <div onClick={logout}>
+                            <li className="mr-3  hover:rounded-lg hover:bg-none">
+                                <div onClick={handleLogOut}>
                                     Logout
                                 </div>
                             </li>
                             :
-                            <li className="hover:border hover:border-[#de5353] hover:rounded-lg hover:bg-none">
+                            <li className=" hover:rounded-lg hover:bg-none">
                                 <Link to='/login'>
                                     <div>
                                         Login
@@ -74,18 +85,18 @@ const Navbar = () => {
                             className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
                         >
                             <li>
-                                <div className='justify-between'>Add Job</div>
+                                <Link to='/addJob'><div className='justify-between'>Add Job</div></Link>
                             </li>
                             <li>
-                                <div>My Posted Jobs</div>
+                                <Link to='/myPostedJobs'><div>My Posted Jobs</div></Link>
                             </li>
                             <li>
-                                <div>My Bids</div>
+                                <Link to='/myBids'><div>My Bids</div></Link>
                             </li>
                             <li>
-                                <div>Bid Requests</div>
+                                <Link to='/bidReq'><div>Bid Requests</div></Link>
                             </li>
-                            <li onClick={logout} className='mt-2'>
+                            <li onClick={handleLogOut} className='mt-2'>
                                 <button className='bg-gray-200 block text-center'>Logout</button>
                             </li>
                         </ul>

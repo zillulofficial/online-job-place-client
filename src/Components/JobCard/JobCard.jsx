@@ -1,0 +1,40 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const JobCard = ({ job }) => {
+    
+    return (
+        <div>
+            <Link to={`/job/${job._id}`}>
+                <div className='w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'>
+                    <div className='flex items-center justify-between'>
+                        <span className='text-xs font-light text-gray-800 '>
+                            Deadline: {new Date(job.deadline).toLocaleDateString()}
+                        </span>
+                        <span className='px-3 py-1 text-[8px] text-blue-800 uppercase bg-blue-200 rounded-full '>
+                            {job.category}
+                        </span>
+                    </div>
+
+                    <div>
+                        <h1 className='mt-2 text-lg font-semibold text-gray-800 '>
+                            {job.title}
+                        </h1>
+
+                        <p title={job.description} className='mt-2 text-sm text-gray-600 '>
+                            {job.description.substring(0, 70)}...
+                        </p>
+                        <p className='mt-2 text-sm font-bold text-gray-600 '>
+                            Range: ${job.min_price} - ${job.max_price}
+                        </p>
+                        <p className='mt-2 text-sm font-bold text-gray-600 '>
+                            Bids: {job.bid_count}
+                        </p>
+                    </div>
+                </div>
+            </Link>
+        </div>
+    );
+};
+
+export default JobCard;

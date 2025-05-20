@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -16,11 +17,20 @@ const Banner = () => {
     return (
         <div className="max-w-[1185px] mx-auto flex mb-24">
             {/* text part */}
-            <div className="space-y-4 flex-1">
-                <p>NO.1 FREELANCE MARKETPLACE</p>
-                <h3 className="text-6xl font-semibold">Find the best <br /><span className="font-normal dms text-[#de5353]">freelance</span> services</h3>
-                <p className="text-xl text-[#4a5264] pb-4">Over 1200+ expect freelancers are waiting for you</p>
-                <button className="btn">Post a Job for Free</button>
+            <div className=" flex-1">
+                <p className="mb-4">NO.1 FREELANCE MARKETPLACE</p>
+                <h3 className="text-6xl font-semibold mb-5">Find the best <br /><span className="font-normal dms text-[#de5353]">freelance</span> services</h3>
+                <p className="text-xl text-[#4a5264] pb-4 mb-6">Over 1200+ expect freelancers are waiting for you</p>
+                <Link to='/addJob'>
+                    <button className="cursor-pointer relative group overflow-hidden border-2 px-8 py-2 border-[#93c5fd] rounded-lg">
+                        <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#93c5fd] duration-500">Post a Job for Free</span>
+                        <span className="absolute top-0 left-0 w-full bg-[#93c5fd8f] duration-500 group-hover:-translate-x-full h-full"></span>
+                        <span className="absolute top-0 left-0 w-full bg-[#93c5fd8f] duration-500 group-hover:translate-x-full h-full"></span>
+
+                        <span className="absolute top-0 left-0 w-full bg-[#93c5fd8f] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                        <span className="absolute delay-300 top-0 left-0 w-full bg-[#93c5fd8f] duration-500 group-hover:translate-y-full h-full"></span>
+                    </button>
+                </Link>
             </div>
             {/* grid picture part */}
             <div className=" hidden lg:grid lg:grid-cols-4 lg:gap-6 flex-1">

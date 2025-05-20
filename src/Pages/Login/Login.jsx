@@ -1,18 +1,24 @@
 import { IoMdEyeOff } from "react-icons/io";
 import { FaEye, FaFacebook, FaGithub } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
-    const { login, googleLogIn, facebookLogIn, githubLogIn } = useContext(AuthContext)
+    const { login, googleLogIn, facebookLogIn, githubLogIn, user, loader } = useContext(AuthContext)
     const navigate = useNavigate()
+    const [showPassword, setShowPassword] = useState(false)
     const location = useLocation()
     const from = location?.state || '/';
+    useEffect(()=>{
+        if(user){
+            navigate('/')
+        }
+    },[])
 
-    const [showPassword, setShowPassword] = useState(false)
     const handleSubmit = e => {
         e.preventDefault()
         const form = e.target
@@ -49,11 +55,18 @@ const Login = () => {
             .then(result => {
                 if (result.user) {
                     console.log(result.user)
+                    // axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {email: result?.user?.email})
+                    // .then(res=>{
+                    //     console.log(res.data);
+                    // })
                     navigate(from)
                 }
             })
             .catch(error => console.log(error))
     }
+
+    // if(user || loader) return
+
     return (
         <div>
             <div className="container mx-auto flex flex-col-reverse gap-12 md:gap-0 md:flex-row justify-between items-center mb-24">

@@ -11,7 +11,7 @@ const PopularServices = () => {
                 {/* card 01 */}
                 <div className="image-container rounded-full cursor-pointer h-48">
                         <img className="zoom-image h-full" src="https://i.postimg.cc/Qx5V6ZsV/programming-tech.jpg" alt="" />
-                    <div className="absolute top-1/3 left-16 text-center h-full">
+                    <div className="absolute top-1/3 left-16 text-center h-full z-50">
                         <p className="text-xl text-white mb-2">Programming & Tech</p>
                         <p className="text-xl text-white">4 services</p>
                     </div>
@@ -19,7 +19,7 @@ const PopularServices = () => {
                 {/* card 02 */}
                 <div className="image-container rounded-full cursor-pointer h-48">
                         <img className="zoom-image h-full" src="https://i.postimg.cc/3rkkvDcX/graphics-design.jpg" alt="" />
-                    <div className="absolute top-1/3 left-16 text-center">
+                    <div className="absolute top-1/3 left-16 text-center h-full z-50">
                         <p className="text-xl text-white mb-2">Graphic & Design</p>
                         <p className="text-xl text-white">4 services</p>
                     </div>
@@ -29,7 +29,7 @@ const PopularServices = () => {
                         <img className="zoom-image h-full" src="https://i.postimg.cc/SxfRhLnh/writing-and-translate.jpg" alt="" />
                     <div className="image-container rounded-full h-full">
                     </div>
-                    <div className="absolute top-1/3 left-16 text-center">
+                    <div className="absolute top-1/3 left-16 text-center h-full z-50">
                         <p className="text-xl text-white mb-2">Writing & translation</p>
                         <p className="text-xl text-white">4 services</p>
                     </div>
@@ -39,7 +39,7 @@ const PopularServices = () => {
                         <img className="zoom-image h-full" src="https://i.postimg.cc/fySQRs5d/finance-accounting.jpg" alt="" />
                     <div className="image-container rounded-full h-full">
                     </div>
-                    <div className="absolute top-1/3 left-16 text-center">
+                    <div className="absolute top-1/3 left-16 text-center h-full z-50">
                         <p className="text-xl text-white mb-2">Finance & Accounting</p>
                         <p className="text-xl text-white">4 services</p>
                     </div>
@@ -49,7 +49,7 @@ const PopularServices = () => {
                         <img className="zoom-image h-full" src="https://i.postimg.cc/7PjfMYFp/photography-editor.jpg" alt="" />
                     <div className="image-container rounded-full h-full">
                     </div>
-                    <div className="absolute top-1/3 left-16 text-center">
+                    <div className="absolute top-1/3 left-16 text-center h-full z-50">
                         <p className="text-xl text-white mb-2">Photography & Edits</p>
                         <p className="text-xl text-white">4 services</p>
                     </div>
@@ -59,7 +59,7 @@ const PopularServices = () => {
                         <img className="zoom-image h-full" src="https://i.postimg.cc/V5yQShHV/AI-service.jpg" alt="" />
                     <div className="image-container rounded-full h-full">
                     </div>
-                    <div className="absolute top-1/3 left-16 text-center">
+                    <div className="absolute top-1/3 left-16 text-center h-full z-50">
                         <p className="text-xl text-white mb-2">Artificial Intelligence</p>
                         <p className="text-xl text-white">4 services</p>
                     </div>
