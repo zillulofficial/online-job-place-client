@@ -30,7 +30,7 @@ const Navbar = () => {
 
     }
     return (
-        <div className='navbar shadow-sm max-w-[1185px] px-4 mx-auto mb-24'>
+        <div className='navbar shadow-sm max-w-[1185px] px-4 mx-auto'>
             <div className='flex-1'>
                 <div className='flex items-center'>
                     <img className='w-auto h-10 text-primary hover:cursor-pointer' src='https://i.postimg.cc/L6bM4pSC/logo.png' alt='' />
@@ -44,6 +44,9 @@ const Navbar = () => {
                     </li>
                     <li className=" hover:rounded-lg hover:bg-none mx-3">
                         <Link to='/allJobs'><div>All Jobs</div></Link>
+                    </li>
+                    <li className=" hover:rounded-lg hover:bg-none mx-3">
+                        <Link to='/blogs'><div>Blogs</div></Link>
                     </li>
 
                     {

@@ -22,6 +22,8 @@ import BidRequests from './Pages/BidRequests/BidRequests';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import AllJobs from './Pages/AllJobs/AllJobs';
+import Blogs from './Pages/Blogs/Blogs';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 
 const queryClient = new QueryClient()
@@ -47,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: '/aboutUs',
         element: <AboutUsDetails></AboutUsDetails>
+      },
+      {
+        path: '/contactUs',
+        element: <ContactUs></ContactUs>
       },
       {
         path: '/job/:id',
@@ -77,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: '/allJobs',
         element: <AllJobs></AllJobs>
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>
       }
     ]
   },

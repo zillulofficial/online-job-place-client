@@ -15,7 +15,7 @@ const Banner = () => {
     }
 
     return (
-        <div className="max-w-[1185px] mx-auto flex mb-24">
+        <div className="max-w-[1185px] mx-auto flex mb-24 mt-24">
             {/* text part */}
             <div className=" flex-1">
                 <p className="mb-4">NO.1 FREELANCE MARKETPLACE</p>
